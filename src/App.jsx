@@ -8,7 +8,7 @@ import '/src/App.css';
 
 const App = () => {
   return (
-    <div className="bg-[f0e6ef] text-[#111827] font-sans">
+    <div className="font-sans">
       <Navbar />
       <Hero />
       <Experience />

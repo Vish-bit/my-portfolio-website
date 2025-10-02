@@ -23,9 +23,7 @@ const Hero = () => {
           </h2>
           <p className="text-xl mt-4">
             <em>
-              "When I’m not coding, you’ll find me exploring AI tools, building
-              side projects, and leveling up my skills to stay ahead in the tech
-              space."
+              
             </em>
           </p>
           <div className="flex items-center gap-8 mt-8 justify-between">

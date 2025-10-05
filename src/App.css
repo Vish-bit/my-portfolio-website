@@ -1,25 +1,27 @@
 html, body {
   margin: 0;
   padding: 0;
+  /* scroll-snap-type: y mandatory; */
 }
 
 body{
-  background-image: linear-gradient(to left, #01498d 0%, #ee35ff 100%);
+  /* background-image: linear-gradient(to left, #01498d 0%, #ee35ff 100%); */
+  background-image: linear-gradient(to left, #8f49c4 0%, #0b8793 100%);
   color: #fff;
 }
 .avatar-glow{
-  -webkit-box-shadow:0px 0px 27px 11px #a855f7 ;
-  -moz-box-shadow: 0px 0px 27px 11px #a855f7 ;
-  box-shadow: 0px 0px 27px 11px #a855f7 ;
+  -webkit-box-shadow:0px 0px 27px 11px #0b6893;
+  -moz-box-shadow: 0px 0px 27px 11px #0b6893;
+  box-shadow: 0px 0px 27px 11px #0b6893;
 }
 
 #home .about.name {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid #9333ea; /* The typwriter cursor */
+  border-right: .15em solid #000; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   letter-spacing: .15em; /* Adjust as needed */
   font-size: 1.75rem;
-  color: #9333ea;
+  color: #232323;
   animation: 
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
@@ -41,50 +43,53 @@ body{
 }
 .home-bg {
   height: calc(100vh - 80px);
-  background: #181818dc;
+  /* background: #0000009e; */
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
+  /* -webkit-backdrop-filter: blur(5px); */
   border: 1px solid #c2c2c2;
 }
 /* 11 */
 .btn {
-  border: 1px solid #9333ea;
+  border: 1px solid #ebebeb;
   color: #cccbcb;
-  box-shadow: 0 0 5px #9333ea, 0 0 5px #9333ea inset;
+  box-shadow: 0 0 5px #ebebeb, 0 0 5px #fff inset;
   transition: all 0.3s ease;
   padding: 8px 12px;
   cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
 }
 .btn.secondary-btn:hover{
-  color: white;
+  background-color: #e6e6e6;
+  color: #c06dff;
   text-shadow:
-  0 0 20px #9333ea,
-  0 0 50px #9333eae6,
-  0 0 75px #9333eacc,
-  0 0 76px #9333eab3,
-  0 0 77px #9333ea99,
-  0 0 78px #9333ea80,
-  0 0 79px #9333ea66,
-  0 0 80px #9333ea4d,
-  0 0 85px #9333ea33,
-  0 0 99px #9333ea1a;
+  0 0 20px #ffffff,
+  0 0 50px #ffffffe6,
+  0 0 75px #ffffffcc,
+  0 0 76px #ffffffb3,
+  0 0 77px #ffffff99,
+  0 0 78px #ffffff80,
+  0 0 79px #ffffff66,
+  0 0 80px #ffffff4d,
+  0 0 85px #ffffff33,
+  0 0 99px #ffffff1a;
 }
 .btn.primary-btn:hover{
-  background-color: #9333ea;
-  color: white;
+  background-color: #e6e6e6;
+  color: #32beff;
   text-shadow:
-  0 0 20px #9333ea,
-  0 0 50px #9333eae6,
-  0 0 75px #9333eacc,
-  0 0 76px #9333eab3,
-  0 0 77px #9333ea99,
-  0 0 78px #9333ea80,
-  0 0 79px #9333ea66,
-  0 0 80px #9333ea4d,
-  0 0 85px #9333ea33,
-  0 0 99px #9333ea1a;
+  0 0 20px #ffffff,
+  0 0 50px #ffffffe6,
+  0 0 75px #ffffffcc,
+  0 0 76px #ffffffb3,
+  0 0 77px #ffffff99,
+  0 0 78px #ffffff80,
+  0 0 79px #ffffff66,
+  0 0 80px #ffffff4d,
+  0 0 85px #ffffff33,
+  0 0 99px #ffffff1a;
 }
 .home-bg .avatar-glow{
     width: 300px;
@@ -101,6 +106,20 @@ body{
     100%{
         border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     }
+}
+.glass-bg{
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+section#experience {
+  scroll-snap-align: start;
+}
+.tech-img svg{
+  width: 50px;
 }
          
 

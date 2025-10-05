@@ -6,9 +6,9 @@ const Hero = () => {
       id="home"
       className="w-full"
     >
-      <div className="home-bg flex flex items-center justify-evenly text-center px-6 mx-12">
+      <div className="home-bg glass-bg flex flex items-center justify-evenly text-center px-6 mx-12">
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          <div className="circlular-img avatar-glow bg-white border border-purple-300 rounded-full w-70 h-70">
+          <div className="circlular-img avatar-glow bg-white/70 border border-purple-300 rounded-full w-70 h-70">
             <img
             src="src\assets\avatar-vishakha-2.png"
             alt="avatar"

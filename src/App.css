@@ -8,9 +8,9 @@ body{
   color: #fff;
 }
 .avatar-glow{
-  -webkit-box-shadow:0px 0px 27px 11px rgba(237,76,255,0.35);
-  -moz-box-shadow: 0px 0px 27px 11px rgba(237,76,255,0.35);
-  box-shadow: 0px 0px 27px 11px rgba(237,76,255,0.35);
+  -webkit-box-shadow:0px 0px 27px 11px #a855f7 ;
+  -moz-box-shadow: 0px 0px 27px 11px #a855f7 ;
+  box-shadow: 0px 0px 27px 11px #a855f7 ;
 }
 
 #home .about.name {
@@ -86,7 +86,7 @@ body{
   0 0 85px #9333ea33,
   0 0 99px #9333ea1a;
 }
-.home-bg img{
+.home-bg .avatar-glow{
     width: 300px;
     animation: img 8s ease-in-out infinite;
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;

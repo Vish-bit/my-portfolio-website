@@ -8,11 +8,13 @@ const Hero = () => {
     >
       <div className="home-bg flex flex items-center justify-evenly text-center px-6 mx-12">
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          <img
-            src="src\assets\avatar-vishakha.png"
+          <div className="circlular-img avatar-glow bg-white border border-purple-300 rounded-full w-70 h-70">
+            <img
+            src="src\assets\avatar-vishakha-2.png"
             alt="avatar"
-            className="w-70 h-70 avatar-glow bg-white border border-purple-300 rounded-full object-contain"
+            className=" w-70 h-70 object-contain"
           />
+          </div>
         </div>
         <div className="flex flex-col items-start justify-center text-left md:w-1/2">
           <h2 className="font-semibold about name">

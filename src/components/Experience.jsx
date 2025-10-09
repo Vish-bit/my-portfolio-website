@@ -72,7 +72,7 @@ const Experience = () => {
     <section
       id="experience"
       ref={ref}
-      className="relative h-[300vh] text-center flex flex-col items-center justify-start"
+      className="relative h-[120vh] text-center flex flex-col items-center justify-start"
     >
       
       <h2 className="text-3xl font-bold mb-10 sticky top-10 text-white z-30 m-10">

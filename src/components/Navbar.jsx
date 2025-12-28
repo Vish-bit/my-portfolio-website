@@ -17,7 +17,7 @@ const Navbar = () => {
         </li>
         <li>
           <a href="#projects" className="hover:text-primary">
-            Lab
+            Projects
           </a>
         </li>
       </ul>

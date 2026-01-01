@@ -4,30 +4,31 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
+import Education from './components/Education'
 import Contact from './components/Contact'
 import '/src/App.css';
 
 const App = () => {
   return (
-    <div className="font-sans relative min-h-screen bg-black overflow-hidden">
+    <div className="font-sans relative min-h-screen bg-black overflow-x-hidden">
       {/* Unified Animated Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-800 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-96 h-96 bg-violet-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/2 w-80 h-80 bg-blue-900 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
+        <div className="absolute top-10 left-10 w-48 h-48 md:w-72 md:h-72 bg-blue-800 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-20 right-10 w-64 h-64 md:w-96 md:h-96 bg-violet-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-56 h-56 md:w-80 md:h-80 bg-blue-900 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
         
-        {/* Floating particles */}
-        {[...Array(20)].map((_, i) => (
+        {/* Floating particles - reduced on mobile */}
+        {[...Array(10)].map((_, i) => (
           <motion.div
             key={`particle-${i}`}
-            className="absolute w-2 h-2 bg-white rounded-full opacity-30"
+            className="absolute w-1 h-1 md:w-2 md:h-2 bg-white rounded-full opacity-30"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -100, 0],
-              x: [0, Math.random() * 100 - 50, 0],
+              y: [0, -50, 0],
+              x: [0, Math.random() * 50 - 25, 0],
               opacity: [0.3, 0.8, 0.3],
             }}
             transition={{
@@ -45,6 +46,7 @@ const App = () => {
         <Hero />
         <Experience />
         <Projects />
+        <Education />
         <Contact />
       </div>
     </div>

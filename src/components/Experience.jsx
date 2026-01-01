@@ -8,7 +8,7 @@ const Experience = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"],
+    offset: ["start end", "end start"],
   });
 
   const experiences = [
@@ -55,7 +55,7 @@ const Experience = () => {
       title: "Software Engineer",
       company: "Wishtree Technologies",
       location: "Pune, MH",
-      period: "April 2022 - July 2025",
+      period: "Apr 2022 - Jul 2025",
       type: "full-time",
       level: "mid",
       startDate: "2022",
@@ -90,10 +90,33 @@ const Experience = () => {
     },
     {
       id: 3,
+      title: "Data Science and Machine Learning Intern",
+      company: "Gilbert Research Center",
+      location: "",
+      period: "Oct 2024 - Jan 2025",
+      type: "internship",
+      level: "entry",
+      startDate: "2024",
+      endDate: "2024",
+      desc: [
+        "Completed a 3-months internship focused on core concepts of Data Science and Machine Learning",
+        "Gained hands-on experience with data preprocessing, model development, and performance evaluation using Python and industry-standard ML libraries."
+      ],
+      technologies: ["Python", "Machine Learning", "Data Science", "Data Preprocessing", "Model Development"],
+      achievements: [
+        "Completed intensive ML internship",
+        "Developed predictive models",
+        "Mastered data preprocessing techniques"
+      ],
+      color: "from-violet-900 to-blue-950",
+      icon: <Database className="w-6 h-6" />
+    },
+    {
+      id: 4,
       title: "Software Engineer Intern",
       company: "Wishtree Technologies LLP",
       location: "Pune, MH",
-      period: "3 MONTHS",
+      period: "Jan 2022 - Apr 2022",
       type: "internship",
       level: "entry",
       startDate: "2021",
@@ -113,34 +136,10 @@ const Experience = () => {
       color: "from-blue-900 to-violet-900",
       icon: <Database className="w-6 h-6" />
     },
-    {
-      id: 4,
-      title: "Data Science and Machine Learning Intern",
-      company: "Gilbert Research Center",
-      location: "",
-      period: "3 MONTHS",
-      type: "internship",
-      level: "entry",
-      startDate: "2020",
-      endDate: "2020",
-      desc: [
-        "Completed a 3-months internship focused on core concepts of Data Science and Machine Learning",
-        "Gained hands-on experience with data preprocessing, model development, and performance evaluation using Python and industry-standard ML libraries."
-      ],
-      technologies: ["Python", "Machine Learning", "Data Science", "Data Preprocessing", "Model Development"],
-      achievements: [
-        "Completed intensive ML internship",
-        "Developed predictive models",
-        "Mastered data preprocessing techniques"
-      ],
-      color: "from-violet-900 to-blue-950",
-      icon: <Database className="w-6 h-6" />
-    }
   ];
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, 30]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -154,13 +153,13 @@ const Experience = () => {
   };
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       x: -100,
       scale: 0.8
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       scale: 1,
       transition: {
@@ -172,13 +171,13 @@ const Experience = () => {
   };
 
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50,
       rotateY: 90
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       rotateY: 0,
       transition: {
@@ -221,25 +220,24 @@ const Experience = () => {
         ease: "easeInOut"
       }
     }
-  };
+  }
 
   return (
     <section
       ref={ref}
-      className="relative min-h-screen overflow-hidden"
+      className="relative py-16 sm:py-20 lg:py-24 overflow-hidden px-4 sm:px-6 lg:px-8"
     >
       {/* Main Content */}
-      <motion.div 
-        style={{ opacity }}
-        className="container mx-auto px-4 py-20"
+      <motion.div
+        className="container mx-auto"
       >
         {/* Section Header */}
         <motion.div
           style={{ y: textY }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
         >
           <motion.div
@@ -247,21 +245,21 @@ const Experience = () => {
             animate="animate"
             className="inline-flex items-center gap-2 mb-4"
           >
-            <Briefcase className="w-8 h-8 text-violet-400" />
-            <span className="text-violet-400 text-lg font-semibold">CAREER JOURNEY</span>
+            <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-violet-400" />
+            <span className="text-violet-400 text-base sm:text-lg font-semibold">CAREER JOURNEY</span>
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             variants={itemVariants}
             id="about"
-            className="text-5xl md:text-7xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 via-violet-400 to-blue-500 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 bg-gradient-to-r from-blue-400 via-violet-400 to-blue-500 bg-clip-text text-transparent"
           >
             Work Experience
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             variants={itemVariants}
-            className="text-xl text-gray-300 max-w-2xl mx-auto"
+            className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto"
           >
             My professional journey through software development, from internships to full-time roles
           </motion.p>
@@ -272,21 +270,24 @@ const Experience = () => {
           className="relative"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
         >
           {/* Timeline Line */}
           <motion.div
-            className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-800 to-violet-800 rounded-full"
+            className="absolute left-6 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-0.5 sm:w-1 bg-gradient-to-b from-blue-800 to-violet-800 rounded-full"
             style={{
-              scaleY: useSpring(scrollYProgress, { stiffness: 400, damping: 40 })
+              height: "100%",
+              top: "10px",
+              transformOrigin: "top",
+              scaleY: useSpring(scrollYProgress, { stiffness: 350, damping: 50 })
             }}
             variants={glowAnimation}
             animate="animate"
           />
 
           {/* Experience Cards */}
-          <div className="relative space-y-32">
+          <div className="relative space-y-16 sm:space-y-24 lg:space-y-32">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.id}
@@ -295,7 +296,7 @@ const Experience = () => {
               >
                 {/* Timeline Node */}
                 <motion.div
-                  className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white rounded-full border-4 border-violet-600 z-20"
+                  className="absolute left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full border-4 border-violet-600 z-20"
                   whileHover={{ scale: 1.5 }}
                   variants={glowAnimation}
                   animate="animate"
@@ -313,62 +314,79 @@ const Experience = () => {
                   />
                 </motion.div>
 
-                {/* Experience Card */}
+                {/* Card */}
                 <motion.div
-                  className={`w-full md:w-5/12 ${index % 2 === 0 ? 'mr-auto md:mr-8' : 'ml-auto md:ml-8'}`}
+                  className={`w-full sm:w-5/6 lg:w-1/2 ${index % 2 === 0 ? 'sm:pr-8 lg:pr-12' : 'sm:pl-8 lg:pl-12'}`}
                   variants={cardVariants}
                   whileHover="hover"
-                  onHoverStart={() => setHoveredCard(exp.id)}
-                  onHoverEnd={() => setHoveredCard(null)}
                   onClick={() => setSelectedExperience(selectedExperience?.id === exp.id ? null : exp)}
+                  layoutId={`experience-card-${exp.id}`}
                 >
                   <motion.div
-                    className={`relative bg-gradient-to-br ${exp.color} p-1 rounded-2xl shadow-2xl cursor-pointer transform transition-all duration-300`}
+                    className={`relative bg-gradient-to-br ${exp.color} p-0.5 sm:p-0.5 rounded-xl shadow-2xl cursor-pointer transform transition-all duration-300`}
                     whileHover={{
                       boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
                     }}
                   >
-                    <div className="bg-slate-900 rounded-2xl p-8">
+                    <div className="bg-slate-900 rounded-xl p-4 sm:p-6 lg:p-8">
                       {/* Card Header */}
-                      <div className="flex items-start justify-between mb-6">
-                        <div className="flex items-center gap-3">
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-4 sm:mb-6 gap-4">
+                        <div className="flex items-center items-start gap-3">
                           <motion.div
-                            className={`p-3 bg-gradient-to-r ${exp.color} rounded-xl text-white`}
+                            className={`p-2 sm:p-3 bg-gradient-to-r ${exp.color} rounded-xl text-white`}
                             whileHover={{ rotate: 360 }}
                             transition={{ duration: 0.6 }}
                           >
                             {exp.icon}
                           </motion.div>
                           <div>
-                            <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
-                            <p className="text-violet-300 font-medium">{exp.company}</p>
+                            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white">{exp.title}</h3>
+                            <p className="text-blue-300 font-medium text-sm sm:text-base">{exp.company}</p>
                             {exp.location && (
-                              <div className="flex items-center gap-1 text-gray-400 text-sm mt-1">
-                                <MapPin className="w-4 h-4" />
+                              <div className="flex items-center gap-1 text-gray-400 text-xs sm:text-sm mt-1">
+                                <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                                 {exp.location}
                               </div>
                             )}
                           </div>
                         </div>
-                        
+
                         <motion.div
-                          className="flex flex-col items-end gap-2"
+                          className="flex flex-col items-start sm:items-end pl-3 sm:pl-0 gap-2"
                           animate={{
                             opacity: hoveredCard === exp.id ? 1 : 0.7
                           }}
                         >
-                          <span className="px-3 py-1 bg-gradient-to-r from-blue-800 to-violet-800 rounded-full text-white text-sm font-medium">
+                          <span className="px-2 py-1 sm:px-3 sm:py-1 bg-gradient-to-r from-blue-800 to-violet-800 rounded-full text-white text-xs sm:text-sm font-medium">
                             {exp.type}
                           </span>
-                          <div className="flex items-center gap-1 text-gray-400 text-sm">
-                            <Clock className="w-4 h-4" />
+                          <div className="flex items-center gap-1 text-gray-400 text-xs sm:text-sm min-w-36">
+                            <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
                             {exp.period}
                           </div>
                         </motion.div>
                       </div>
 
                       {/* Description */}
-                      <AnimatePresence>
+                      <div className="mb-4 sm:mb-6">
+                        <ul className="space-y-2">
+                          {exp.desc.map((item, i) => (
+                            <motion.li
+                              key={i}
+                              initial={{ x: -20, opacity: 0 }}
+                              animate={{ x: 0, opacity: 1 }}
+                              transition={{ delay: i * 0.1 }}
+                              className="flex items-start gap-2 text-gray-300 text-sm sm:text-base"
+                            >
+                              <span className="text-blue-400 mt-1">•</span>
+                              {item}
+                            </motion.li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Expandable Content */}
+                      <AnimatePresence mode="wait">
                         {selectedExperience?.id === exp.id && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
@@ -377,34 +395,20 @@ const Experience = () => {
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
-                            <div className="space-y-4 mb-6">
-                              {exp.desc.map((point, i) => (
-                                <motion.p
-                                  key={i}
-                                  initial={{ x: -20, opacity: 0 }}
-                                  animate={{ x: 0, opacity: 1 }}
-                                  transition={{ delay: i * 0.1 }}
-                                  className="text-gray-300 leading-relaxed"
-                                >
-                                  {point}
-                                </motion.p>
-                              ))}
-                            </div>
-
                             {/* Technologies */}
-                            <div className="mb-6">
-                              <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                                <Code className="w-5 h-5" />
+                            <div className="mb-4 sm:mb-6">
+                              <h4 className="text-base sm:text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                                <Code className="w-4 h-4 sm:w-5 sm:h-5" />
                                 Technologies Used
                               </h4>
-                              <div className="flex flex-wrap gap-2">
+                              <div className="flex flex-wrap gap-1 sm:gap-2">
                                 {exp.technologies.map((tech, i) => (
                                   <motion.span
                                     key={i}
                                     initial={{ scale: 0 }}
                                     animate={{ scale: 1 }}
                                     transition={{ delay: i * 0.1, type: "spring" }}
-                                    className="px-3 py-1 bg-gradient-to-r from-blue-800 to-violet-800 rounded-full text-white text-sm"
+                                    className="px-2 py-1 sm:px-3 sm:py-1 bg-gradient-to-r from-blue-800 to-violet-800 rounded-full text-white text-xs sm:text-sm"
                                   >
                                     {tech}
                                   </motion.span>
@@ -413,9 +417,9 @@ const Experience = () => {
                             </div>
 
                             {/* Achievements */}
-                            <div className="mb-6">
-                              <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                                <Award className="w-5 h-5" />
+                            <div className="mb-4 sm:mb-6">
+                              <h4 className="text-base sm:text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                                <Award className="w-4 h-4 sm:w-5 sm:h-5" />
                                 Key Achievements
                               </h4>
                               <ul className="space-y-2">
@@ -425,9 +429,9 @@ const Experience = () => {
                                     initial={{ x: -20, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="flex items-center gap-2 text-gray-300"
+                                    className="flex items-center gap-2 text-gray-300 text-sm sm:text-base"
                                   >
-                                    <Star className="w-4 h-4 text-yellow-400" />
+                                    <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" />
                                     {achievement}
                                   </motion.li>
                                 ))}
@@ -437,26 +441,26 @@ const Experience = () => {
                             {/* Projects */}
                             {exp.projects && exp.projects.length > 0 && (
                               <div>
-                                <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                                  <Target className="w-5 h-5" />
+                                <h4 className="text-base sm:text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                                  <Target className="w-4 h-4 sm:w-5 sm:h-5" />
                                   Key Projects
                                 </h4>
-                                <div className="space-y-4">
+                                <div className="space-y-3 sm:space-y-4">
                                   {exp.projects.map((project, i) => (
                                     <motion.div
                                       key={i}
                                       initial={{ x: -20, opacity: 0 }}
                                       animate={{ x: 0, opacity: 1 }}
                                       transition={{ delay: i * 0.1 }}
-                                      className="p-4 bg-purple-500/10 rounded-lg border border-purple-500/20"
+                                      className="p-3 sm:p-4 bg-purple-500/10 rounded-lg border border-purple-500/20"
                                     >
-                                      <h5 className="text-white font-semibold mb-2">{project.name}</h5>
-                                      <p className="text-gray-400 text-sm mb-3">{project.description}</p>
-                                      <div className="flex flex-wrap gap-2">
+                                      <h5 className="text-white font-semibold mb-2 text-sm sm:text-base">{project.name}</h5>
+                                      <p className="text-gray-400 text-xs sm:text-sm mb-2 sm:mb-3">{project.description}</p>
+                                      <div className="flex flex-wrap gap-1 sm:gap-2">
                                         {project.tech.map((tech, j) => (
                                           <span
                                             key={j}
-                                            className="px-2 py-1 bg-purple-600/30 rounded text-purple-300 text-xs"
+                                            className="px-2 py-0.5 sm:px-2 sm:py-1 bg-purple-600/30 rounded text-purple-300 text-xs"
                                           >
                                             {tech}
                                           </span>
@@ -477,7 +481,7 @@ const Experience = () => {
                         whileHover={{ x: 5 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <span className="text-sm font-medium">
+                        <span className="text-xs sm:text-sm font-medium">
                           {selectedExperience?.id === exp.id ? 'Show Less' : 'Show More'}
                         </span>
                         <motion.div
@@ -486,7 +490,7 @@ const Experience = () => {
                           }}
                           transition={{ duration: 0.3 }}
                         >
-                          <ChevronDown className="w-4 h-4" />
+                          <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                         </motion.div>
                       </motion.button>
                     </div>
@@ -495,25 +499,6 @@ const Experience = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-        >
-          <motion.div
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-800 to-violet-800 rounded-full text-white font-semibold"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Target className="w-5 h-5" />
-            <span>Ready for the next challenge</span>
-            <ArrowRight className="w-5 h-5" />
-          </motion.div>
         </motion.div>
       </motion.div>
     </section>

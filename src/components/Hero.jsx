@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Download, Mail, ArrowRight, Code, Briefcase, Sparkles } from "lucide-react";
+import Avatar from "../assets/avatar-vishakha-2.png";
 
 const Hero = () => {
   return (
@@ -26,7 +27,7 @@ const Hero = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="src/assets/avatar-vishakha-2.png"
+                  src={Avatar}
                   alt="avatar"
                   className="w-full h-full object-cover"
                 />

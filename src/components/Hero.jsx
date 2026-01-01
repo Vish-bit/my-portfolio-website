@@ -104,7 +104,7 @@ const Hero = () => {
               transition={{ delay: 0.6 }}
             >
               <motion.a
-                href="/src/assets/files/CV_VishakhaMore.pdf"
+                href="/assets/files/CV_VishakhaMore.pdf"
                 download="CV_VishakhaMore.pdf"
                 className="flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-800 to-violet-800 rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all text-sm sm:text-base"
                 whileHover={{ scale: 1.05, y: -2 }}
